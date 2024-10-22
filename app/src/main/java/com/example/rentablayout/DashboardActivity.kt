@@ -14,12 +14,6 @@ import com.example.rentablayout.databinding.ActivityDashboardBinding
 
 class DashboardActivity : AppCompatActivity() {
 
-    private val binding by lazy {
-        ActivityDashboardBinding.inflate(layoutInflater)
-    }
-
-    private lateinit var sharedPreferences: SharedPreferences
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -32,13 +26,13 @@ class DashboardActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val fullName = intent.getStringExtra("fullName")
-        val nim = intent.getStringExtra("nim")
+        val fullName = intent.getStringExtra("FULLNAME")
+        val email = intent.getStringExtra("EMAIL")
         return when(item.itemId) {
             R.id.option_profile -> {
                 val intentToProfile = Intent(this@DashboardActivity, ProfileActivity::class.java).apply {
-                    putExtra("fullName", fullName)
-                    putExtra("nim", nim)
+                    putExtra("FULLNAME", fullName)
+                    putExtra("EMAIL", email)
                 }
                 startActivity(intentToProfile)
                 true

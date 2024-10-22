@@ -7,6 +7,9 @@
 
     <style name="Theme.RenTabLayout" parent="Base.Theme.RenTabLayout" />
 
-    <style name="Base.Theme.WithActionBar" parent="Theme.Material3.DayNight"></style>
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/blue</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
 
 </resources>

@@ -23,16 +23,16 @@ class ProfileActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         with(binding) {
-            val fullName = intent.getStringExtra("fullName")
-            val nim = intent.getStringExtra("nim")
+            val fullName = intent.getStringExtra("FULLNAME")
+            val email = intent.getStringExtra("EMAIL")
 
             showFullName.text = fullName
-            showNim.text = nim
+            showEmail.text = email
         }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_options, menu)
+        menuInflater.inflate(R.menu.profile_menu, menu)
         return true
     }
 
@@ -41,6 +41,11 @@ class ProfileActivity : AppCompatActivity() {
             R.id.option_logout -> {
                 val intentToLogin = Intent(this@ProfileActivity, MainActivity::class.java)
                 startActivity(intentToLogin)
+                true
+            }
+            R.id.option_back -> {
+                val intetToDashboard = Intent(this@ProfileActivity, DashboardActivity::class.java)
+                startActivity(intetToDashboard)
                 true
             } else -> super.onOptionsItemSelected(item)
         }
